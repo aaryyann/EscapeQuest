@@ -1,26 +1,292 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans:wght@400;500;700&family=Noto+Sans+Devanagari:wght@400;700&family=Noto+Sans+Bengali:wght@400;700&family=Noto+Sans+Tamil:wght@400;700&family=Noto+Sans+Arabic:wght@400;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+SC:wght@400;700&family=Noto+Sans+KR:wght@400;700&display=swap");
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-void: #050510;
+  --color-abyss: #0B0D1A;
+  --color-deep: #111327;
+  --color-surface: #1A1D35;
+  --color-elevated: #222648;
+  --color-overlay: #2A2E55;
+
+  --color-neon-cyan: #00F0FF;
+  --color-neon-green: #00FF88;
+  --color-neon-purple: #A855F7;
+  --color-neon-pink: #FF44AA;
+  --color-neon-amber: #FFB800;
+  --color-neon-red: #FF4444;
+
+  --color-ghost-100: #E8EAFF;
+  --color-ghost-200: #C4C8F0;
+  --color-ghost-300: #9BA0D0;
+  --color-ghost-400: #6B70A0;
+  --color-ghost-500: #4A4F78;
+
+  --color-player-red: #FF4444;
+  --color-player-blue: #4488FF;
+  --color-player-green: #44FF88;
+  --color-player-yellow: #FFCC00;
+
+  --font-display: "Press Start 2P", monospace;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2A2E55 #0B0D1A;
+}
+
+html {
+  background-color: #050510;
+  color: #E8EAFF;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter", "Noto Sans", "Noto Sans Devanagari", "Noto Sans Bengali",
+    "Noto Sans Tamil", "Noto Sans Arabic", "Noto Sans JP", "Noto Sans SC",
+    "Noto Sans KR", sans-serif;
+  background: linear-gradient(180deg, #050510 0%, #0B0D1A 50%, #111327 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.3), 0 0 60px rgba(0, 240, 255, 0.1);
+}
+
+.glow-green {
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.3), 0 0 60px rgba(0, 255, 136, 0.1);
+}
+
+.glow-purple {
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.3), 0 0 60px rgba(168, 85, 247, 0.1);
+}
+
+.glow-red {
+  box-shadow: 0 0 20px rgba(255, 68, 68, 0.3), 0 0 60px rgba(255, 68, 68, 0.1);
+}
+
+.glow-amber {
+  box-shadow: 0 0 20px rgba(255, 184, 0, 0.3), 0 0 60px rgba(255, 184, 0, 0.1);
+}
+
+.text-glow-cyan {
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.5), 0 0 30px rgba(0, 240, 255, 0.2);
+}
+
+.text-glow-green {
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.5), 0 0 30px rgba(0, 255, 136, 0.2);
+}
+
+.text-glow-purple {
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.5), 0 0 30px rgba(168, 85, 247, 0.2);
+}
+
+.pixel-border {
+  border: 3px solid #2A2E55;
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 240, 255, 0.1),
+    0 0 0 1px rgba(0, 240, 255, 0.05);
+}
+
+.pixel-border-glow {
+  border: 2px solid rgba(0, 240, 255, 0.4);
+  box-shadow:
+    inset 0 0 20px rgba(0, 240, 255, 0.05),
+    0 0 20px rgba(0, 240, 255, 0.15);
+}
+
+.btn-gaming {
+  position: relative;
+  padding: 12px 32px;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  overflow: hidden;
+}
+
+.btn-gaming::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+  pointer-events: none;
+}
+
+.btn-gaming:hover {
+  transform: translateY(-2px);
+}
+
+.btn-gaming:active {
+  transform: translateY(0px);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #00F0FF, #00CC88);
+  color: #050510;
+  border-color: #00F0FF;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.3), 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.5), 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn-secondary {
+  background: rgba(42, 46, 85, 0.8);
+  color: #E8EAFF;
+  border-color: #4A4F78;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-secondary:hover {
+  border-color: #A855F7;
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.3), 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #FF4444, #CC2222);
+  color: #fff;
+  border-color: #FF4444;
+  box-shadow: 0 0 20px rgba(255, 68, 68, 0.3), 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card-gaming {
+  background: linear-gradient(135deg, rgba(26, 29, 53, 0.9), rgba(17, 19, 39, 0.9));
+  border: 2px solid rgba(42, 46, 85, 0.8);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+}
+
+.card-gaming:hover {
+  border-color: rgba(0, 240, 255, 0.3);
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.1);
+}
+
+.zone-card {
+  background: rgba(17, 19, 39, 0.8);
+  border: 2px solid rgba(42, 46, 85, 0.6);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.zone-card:hover {
+  transform: scale(1.03);
+  border-color: rgba(0, 240, 255, 0.5);
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.2);
+}
+
+.zone-has-clue {
+  border-color: rgba(0, 255, 136, 0.5);
+  animation: clue-pulse 2s ease-in-out infinite;
+}
+
+@keyframes clue-pulse {
+  0%, 100% { box-shadow: 0 0 15px rgba(0, 255, 136, 0.2); }
+  50% { box-shadow: 0 0 30px rgba(0, 255, 136, 0.4); }
+}
+
+.zone-discovered {
+  border-color: rgba(168, 85, 247, 0.4);
+  opacity: 0.7;
+}
+
+.zone-locked {
+  border-color: rgba(255, 68, 68, 0.4);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+
+.animate-flicker {
+  animation: flicker 4s ease-in-out infinite;
+}
+
+.particles-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(1px 1px at 20% 30%, rgba(0, 240, 255, 0.3), transparent),
+    radial-gradient(1px 1px at 40% 70%, rgba(168, 85, 247, 0.3), transparent),
+    radial-gradient(1px 1px at 60% 20%, rgba(0, 255, 136, 0.2), transparent),
+    radial-gradient(1px 1px at 80% 50%, rgba(0, 240, 255, 0.2), transparent),
+    radial-gradient(1px 1px at 10% 80%, rgba(168, 85, 247, 0.2), transparent),
+    radial-gradient(1.5px 1.5px at 30% 50%, rgba(0, 240, 255, 0.4), transparent),
+    radial-gradient(1.5px 1.5px at 70% 90%, rgba(0, 255, 136, 0.3), transparent),
+    radial-gradient(1px 1px at 50% 10%, rgba(168, 85, 247, 0.3), transparent),
+    radial-gradient(1px 1px at 90% 40%, rgba(0, 240, 255, 0.2), transparent);
+}
+
+.input-gaming {
+  background: rgba(11, 13, 26, 0.8);
+  border: 2px solid rgba(42, 46, 85, 0.8);
+  border-radius: 12px;
+  padding: 12px 16px;
+  color: #E8EAFF;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.input-gaming:focus {
+  border-color: rgba(0, 240, 255, 0.5);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.15);
+}
+
+.input-gaming::placeholder {
+  color: #4A4F78;
+}
+
+.timer-safe { color: #00FF88; }
+.timer-warning { color: #FFB800; }
+.timer-danger { color: #FF4444; animation: flicker 0.5s ease-in-out infinite; }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0B0D1A; }
+::-webkit-scrollbar-thumb { background: #2A2E55; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #4A4F78; }
+
+[dir="rtl"] .chat-message {
+  direction: rtl;
+  text-align: right;
+}
+
+.confetti-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
 }
