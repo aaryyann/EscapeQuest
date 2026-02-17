@@ -1,0 +1,19 @@
+{
+  "puzzle1_clue_bookshelf": "The third book from the left has the number 4 on its spine.",
+  "puzzle1_clue_painting": "The painting shows a clock pointing to 9 o'clock.",
+  "puzzle1_clue_clock": "The pendulum has the number 2 scratched on it.",
+  "puzzle2_shared_note": "Match the colors to the elements.",
+  "puzzle2_clue_fire": "The fire burns with a deep red flame.",
+  "puzzle2_clue_mirror": "The mirror reflects a strange blue light.",
+  "puzzle2_clue_desk": "A single green leaf sits on the corner of the desk.",
+  "puzzle3_riddle_line1": "I have hands but cannot clap.",
+  "puzzle3_riddle_line2": "I have a face but cannot smile.",
+  "puzzle3_riddle_line3": "I tell you something but never speak.",
+  "puzzle4_digit1": "The first number of the final code is 7.",
+  "puzzle4_digit2": "The second number of the final code is 3.",
+  "puzzle4_digit3": "The third number of the final code is 1.",
+  "room_intro": "You are trapped in a haunted mansion. Find the clues and escape before time runs out!",
+  "chest_unlocked": "The chest creaks open...",
+  "riddle_prompt": "What am I?",
+  "door_unlocked": "The door swings open! You escaped!"
+}

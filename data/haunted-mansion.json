@@ -1,0 +1,58 @@
+{
+  "theme": "haunted_mansion",
+  "time_limit": 300,
+  "zones": ["painting", "bookshelf", "clock", "desk", "fireplace", "mirror", "chest", "door"],
+  "puzzles": [
+    {
+      "number": 1,
+      "name": "The Bookshelf Code",
+      "type": "code_entry",
+      "digits": 3,
+      "answer": "492",
+      "target_zone": "chest",
+      "clues": {
+        "0": { "zone": "bookshelf", "text_key": "puzzle1_clue_bookshelf" },
+        "1": { "zone": "painting", "text_key": "puzzle1_clue_painting" },
+        "2": { "zone": "clock", "text_key": "puzzle1_clue_clock" }
+      }
+    },
+    {
+      "number": 2,
+      "name": "The Color Sequence",
+      "type": "color_sequence",
+      "answer": ["red", "blue", "green"],
+      "target_zone": "chest",
+      "shared_text_key": "puzzle2_shared_note",
+      "clues": {
+        "0": { "zone": "fireplace", "text_key": "puzzle2_clue_fire" },
+        "1": { "zone": "mirror", "text_key": "puzzle2_clue_mirror" },
+        "2": { "zone": "desk", "text_key": "puzzle2_clue_desk" }
+      }
+    },
+    {
+      "number": 3,
+      "name": "The Riddle",
+      "type": "text_answer",
+      "answer": "clock",
+      "target_zone": "mirror",
+      "clues": {
+        "0": { "zone": "mirror", "text_key": "puzzle3_riddle_line1" },
+        "1": { "zone": "mirror", "text_key": "puzzle3_riddle_line2" },
+        "2": { "zone": "mirror", "text_key": "puzzle3_riddle_line3" }
+      }
+    },
+    {
+      "number": 4,
+      "name": "The Final Door",
+      "type": "code_entry",
+      "digits": 3,
+      "answer": "731",
+      "target_zone": "door",
+      "clues": {
+        "0": { "zone": "clock", "text_key": "puzzle4_digit1" },
+        "1": { "zone": "clock", "text_key": "puzzle4_digit2" },
+        "2": { "zone": "clock", "text_key": "puzzle4_digit3" }
+      }
+    }
+  ]
+}
